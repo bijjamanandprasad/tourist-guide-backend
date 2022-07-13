@@ -10,8 +10,10 @@ app.use(cookieParser());
 app.use(express.json());
 
 const authRoutes = require('./routes/authRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 app.use('/',authRoutes);
+app.use('/post',postRoutes);
 
 const CONNECTION_URL = "mongodb://localhost:27017/tourist-guide"
 const PORT = process.env.PORT || 5000;
